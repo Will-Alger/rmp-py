@@ -9,7 +9,7 @@ This project requires Python 3 and pip. The instructions below should work on bo
 If you haven't installed Python or pip yet, follow these guides:
 
 - [Python Installation](https://www.python.org/downloads/)
-- [pip Installation](https://pip.pypa.io/en/stable/installing/)
+- [pip Installation](https://pip.pypa.io/en/stable/installation/)
 
 Ensure that Python and pip are in your system's PATH.
 
