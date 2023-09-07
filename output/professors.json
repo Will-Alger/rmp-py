@@ -103,6 +103,26 @@
                             },
                             "wouldTakeAgainPercent": -1
                         }
+                    },
+                    {
+                        "cursor": "YXJyYXljb25uZWN0aW9uOjU=",
+                        "node": {
+                            "__typename": "Teacher",
+                            "avgDifficulty": 2.6,
+                            "avgRating": 4,
+                            "department": "Education",
+                            "firstName": "Denise",
+                            "id": "VGVhY2hlci0xNzE0Ng==",
+                            "isSaved": false,
+                            "lastName": "Dallmer",
+                            "legacyId": 17146,
+                            "numRatings": 11,
+                            "school": {
+                                "id": "U2Nob29sLTY5OQ==",
+                                "name": "Northern Kentucky University"
+                            },
+                            "wouldTakeAgainPercent": 100
+                        }
                     }
                 ],
                 "filters": [
@@ -449,7 +469,7 @@
                     }
                 ],
                 "pageInfo": {
-                    "endCursor": "YXJyYXljb25uZWN0aW9uOjQ=",
+                    "endCursor": "YXJyYXljb25uZWN0aW9uOjU=",
                     "hasNextPage": true
                 },
                 "resultCount": 1763

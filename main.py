@@ -1,6 +1,5 @@
-import requests
-import json
 
+from RMPScraper import RMPScraper
 
 """ 
     Notes: pretty sure passing a cursor is optional. If you don't pass the cursor it just uses the first one?
@@ -312,11 +311,10 @@ request_amt = 4
 #     }
 # }
 
-with open('./graphql/QueryProfessors.graphql', 'r') as file:
-    queryProfessors = file.read().replace('\n', '')
 
-with open('./graphql/QueryReviews.graphql', 'r') as file:
-    queryReviews = file.read().replace('\n', '')
+
+# with open('./graphql/QueryReviews.graphql', 'r') as file:
+#     queryReviews = file.read().replace('\n', '')
 
 # payload_dict = {
 #     "query" : queryProfessors,
@@ -332,58 +330,36 @@ with open('./graphql/QueryReviews.graphql', 'r') as file:
 #     }
 # }
 
-def create_professor_payload(count, schoolID, text="", cursor="",  fallback=True, departmentID=None):
-    payload_dict = {
-        "query" : queryProfessors,
-        "variables": {
-            "count": count,
-            "cursor": cursor,
-            "query": {
-                "text": text, 
-                "schoolID": schoolID,
-                "fallback": fallback,
-                "departmentID": departmentID
-            }
-        }
-    }
-    return payload_dict
-payload_dict = create_professor_payload(5, "U2Nob29sLTY5OQ==")
 
-payload_dict2 = {
-    "query": queryReviews,
-    "variables": {
-        "count": 1,
-        "id": "VGVhY2hlci02OTY2NTk=", # <-- this is the professor ID associated with the reviews
-        "courseFilter": None,
-        "cursor": "" # <-- This is the cursor for the first review on the page (MIGHT BE OPTIONAL)
-    }
-}
+# payload_dict = construct_professors_query(
+#     "U2Nob29sLTY5OQ=="
+#     # ... other args
+#     )
 
+# payload_dict2 = {
+    # "query": queryReviews,
+    # "variables": {
+    #     "count": 1,
+    #     "id": "VGVhY2hlci02OTY2NTk=", # <-- this is the professor ID associated with the reviews
+    #     "courseFilter": None,
+    #     "cursor": "" # <-- This is the cursor for the first review on the page (MIGHT BE OPTIONAL)
+    # }
+# }
 
-payload = json.dumps(payload_dict)
+# Instantiate the scraper object
+scraper = RMPScraper()
 
-headers = {
-  'Accept': '*/*',
-  'Accept-Language': 'en-US,en;q=0.9,es;q=0.8',
-  'Authorization': 'Basic dGVzdDp0ZXN0',
-  'Connection': 'keep-alive',
-  'Content-Type': 'application/json',
-  'DNT': '1',
-  'Origin': 'https://www.ratemyprofessors.com',
-  'Referer': 'https://www.ratemyprofessors.com/search/professors/699?q=*',
-  'Sec-Fetch-Dest': 'empty',
-  'Sec-Fetch-Mode': 'cors',
-  'Sec-Fetch-Site': 'same-origin'
-}
+# Define the school ID
+schoolID = 'U2Nob29sLTY5OQ=='
+teacherID = 'VGVhY2hlci02OTY2NTk='
 
-response = requests.request("POST", url, headers=headers, data=payload)
+scraper.get_professors(
+    schoolID, 
+    count=6,  
+)
 
-# Convert the response content to JSON
-data = response.json()
-
-# Write the data to 'output.json'
-with open('output.json', 'w') as f:
-    json.dump(data, f, indent=4)
-
-
-
+# scra
+scraper.get_reviews(
+    teacherID,
+    count=25,
+)
