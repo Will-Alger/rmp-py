@@ -1,0 +1,39 @@
+query NewSearchSchoolsQuery($query: SchoolSearchQuery!) {
+  newSearch {
+    schools(query: $query) {
+      edges {
+        cursor
+        node {
+          id
+          legacyId
+          name
+          city
+          state
+          departments {
+            id
+            name
+          }
+          numRatings
+          avgRatingRounded
+          summary {
+            campusCondition
+            campusLocation
+            careerOpportunities
+            clubAndEventActivities
+            foodQuality
+            internetSpeed
+            libraryCondition
+            schoolReputation
+            schoolSafety
+            schoolSatisfaction
+            socialActivities
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}
