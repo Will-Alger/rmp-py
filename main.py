@@ -8,22 +8,23 @@ scraper = RMPScraper()
 schoolQuery = scraper.get_school("Northern Kentucky University")
 
 # Search the json for the school ID
+# This style of 'indexing in' [][][]... will need to be cleaned up later
 schoolID = schoolQuery["data"]["newSearch"]["schools"]["edges"][0]["node"]["id"]
 
 # Do a single query to get the total number of professors
-professorQuery = scraper.get_professors(
-    schoolID, 
-    count=1,
-)
+# professorQuery = scraper.get_professors(
+#     schoolID, 
+#     count=1,
+# )
 
 # Grab the number of professors in the university from the response
-num_professors = professorQuery['data']['search']['teachers']['resultCount']
+# num_professors = professorQuery['data']['search']['teachers']['resultCount']
 
-# Grab all professors
+# Grab a professor
 professors = professorQuery = scraper.get_professors(
     schoolID, 
-    count=1,
-    name="Nicholas Caporusso" #OPTIONAL
+    count=1, # count is a required field
+    name="Nicholas Caporusso" # name is optional. pass '' to have no search parameters
 )
 
 # Get the first teacher from that list
@@ -47,6 +48,7 @@ def print_teacher_info(node):
 os.system('cls' if os.name == 'nt' else 'clear')
 print_teacher_info(teacherData)
 
+#
 teacherReviews = scraper.get_reviews(
     teacherID,
     count=teacherReviewCount,
