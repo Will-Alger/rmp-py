@@ -9,7 +9,7 @@ schoolQuery = scraper.get_school("Northern Kentucky University")
 
 # Search the json for the school ID
 # This style of 'indexing in' [][][]... will need to be cleaned up later
-schoolID = schoolQuery["data"]["newSearch"]["schools"]["edges"][0]["node"]["id"]
+schoolID = schoolQuery[0]["node"]["id"]
 
 # Do a single query to get the total number of professors
 # professorQuery = scraper.get_professors(
@@ -23,12 +23,12 @@ schoolID = schoolQuery["data"]["newSearch"]["schools"]["edges"][0]["node"]["id"]
 # Grab a professor
 professors = professorQuery = scraper.get_professors(
     schoolID, 
-    count=1, # count is a required field
+    count=12, # count is a required field
     name="Nicholas Caporusso" # name is optional. pass '' to have no search parameters
 )
 
 # Get the first teacher from that list
-teacherData = professors['data']['search']['teachers']['edges'][0]['node']
+teacherData = professors['edges'][0]['node']
 teacherID = teacherData['id']
 teacherReviewCount = teacherData['numRatings']
 
@@ -54,7 +54,7 @@ teacherReviews = scraper.get_reviews(
     count=teacherReviewCount,
 )
 
-ratings = teacherReviews['data']['node']['ratings']['edges']
+ratings = teacherReviews['node']['ratings']['edges']
    
 def print_review_details(reviews):
     for review in reviews:

@@ -1,576 +1,564 @@
-{
-    "data": {
-        "newSearch": {
-            "schools": {
-                "edges": [
-                    {
-                        "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
-                        "node": {
-                            "avgRatingRounded": 3.8000000000000003,
-                            "city": "Covington",
-                            "departments": [
-                                {
-                                    "id": "2",
-                                    "name": "Agriculture"
-                                },
-                                {
-                                    "id": "3",
-                                    "name": "Anthropology"
-                                },
-                                {
-                                    "id": "4",
-                                    "name": "Architecture"
-                                },
-                                {
-                                    "id": "5",
-                                    "name": "Art History"
-                                },
-                                {
-                                    "id": "6",
-                                    "name": "Biology"
-                                },
-                                {
-                                    "id": "7",
-                                    "name": "Business"
-                                },
-                                {
-                                    "id": "8",
-                                    "name": "Chemistry"
-                                },
-                                {
-                                    "id": "9",
-                                    "name": "Classics"
-                                },
-                                {
-                                    "id": "10",
-                                    "name": "Communication"
-                                },
-                                {
-                                    "id": "11",
-                                    "name": "Computer Science"
-                                },
-                                {
-                                    "id": "13",
-                                    "name": "Culinary Arts"
-                                },
-                                {
-                                    "id": "14",
-                                    "name": "Design"
-                                },
-                                {
-                                    "id": "16",
-                                    "name": "Education"
-                                },
-                                {
-                                    "id": "17",
-                                    "name": "Engineering"
-                                },
-                                {
-                                    "id": "18",
-                                    "name": "English"
-                                },
-                                {
-                                    "id": "19",
-                                    "name": "Ethnic Studies"
-                                },
-                                {
-                                    "id": "20",
-                                    "name": "Film"
-                                },
-                                {
-                                    "id": "21",
-                                    "name": "Finance"
-                                },
-                                {
-                                    "id": "22",
-                                    "name": "Fine Arts"
-                                },
-                                {
-                                    "id": "23",
-                                    "name": "Geography"
-                                },
-                                {
-                                    "id": "24",
-                                    "name": "Geology"
-                                },
-                                {
-                                    "id": "25",
-                                    "name": "Graphic Arts"
-                                },
-                                {
-                                    "id": "26",
-                                    "name": "Health Science"
-                                },
-                                {
-                                    "id": "27",
-                                    "name": "History"
-                                },
-                                {
-                                    "id": "28",
-                                    "name": "Hospitality"
-                                },
-                                {
-                                    "id": "29",
-                                    "name": "Humanities"
-                                },
-                                {
-                                    "id": "30",
-                                    "name": "Information Science"
-                                },
-                                {
-                                    "id": "32",
-                                    "name": "Journalism"
-                                },
-                                {
-                                    "id": "34",
-                                    "name": "Law"
-                                },
-                                {
-                                    "id": "35",
-                                    "name": "Literature"
-                                },
-                                {
-                                    "id": "36",
-                                    "name": "Management"
-                                },
-                                {
-                                    "id": "37",
-                                    "name": "Marketing"
-                                },
-                                {
-                                    "id": "38",
-                                    "name": "Mathematics"
-                                },
-                                {
-                                    "id": "39",
-                                    "name": "Medicine"
-                                },
-                                {
-                                    "id": "40",
-                                    "name": "Music"
-                                },
-                                {
-                                    "id": "41",
-                                    "name": "Nursing"
-                                },
-                                {
-                                    "id": "42",
-                                    "name": "Philosophy"
-                                },
-                                {
-                                    "id": "43",
-                                    "name": "Physical Education"
-                                },
-                                {
-                                    "id": "44",
-                                    "name": "Physics"
-                                },
-                                {
-                                    "id": "46",
-                                    "name": "Psychology"
-                                },
-                                {
-                                    "id": "47",
-                                    "name": "Religion"
-                                },
-                                {
-                                    "id": "48",
-                                    "name": "Science"
-                                },
-                                {
-                                    "id": "49",
-                                    "name": "Social Science"
-                                },
-                                {
-                                    "id": "50",
-                                    "name": "Social Work"
-                                },
-                                {
-                                    "id": "51",
-                                    "name": "Sociology"
-                                },
-                                {
-                                    "id": "52",
-                                    "name": "Theater"
-                                },
-                                {
-                                    "id": "53",
-                                    "name": "Women's Studies"
-                                },
-                                {
-                                    "id": "54",
-                                    "name": "Writing"
-                                },
-                                {
-                                    "id": "65",
-                                    "name": "German"
-                                },
-                                {
-                                    "id": "70",
-                                    "name": "French"
-                                },
-                                {
-                                    "id": "80",
-                                    "name": "Spanish"
-                                },
-                                {
-                                    "id": "118",
-                                    "name": "Honors"
-                                },
-                                {
-                                    "id": "135",
-                                    "name": "International Studies"
-                                },
-                                {
-                                    "id": "140",
-                                    "name": "Statistics"
-                                },
-                                {
-                                    "id": "149",
-                                    "name": "Russian"
-                                },
-                                {
-                                    "id": "161",
-                                    "name": "Business Law"
-                                },
-                                {
-                                    "id": "170",
-                                    "name": "Japanese"
-                                },
-                                {
-                                    "id": "189",
-                                    "name": "Biological Sciences"
-                                },
-                                {
-                                    "id": "246",
-                                    "name": "Information Systems"
-                                },
-                                {
-                                    "id": "332",
-                                    "name": "Interdisciplinary Studies"
-                                },
-                                {
-                                    "id": "685",
-                                    "name": "Radio, TV & Film"
-                                },
-                                {
-                                    "id": "732",
-                                    "name": "University Studies"
-                                },
-                                {
-                                    "id": "1222",
-                                    "name": "Organizational Leadership"
-                                },
-                                {
-                                    "id": "1264",
-                                    "name": "Construction Management"
-                                },
-                                {
-                                    "id": "1452",
-                                    "name": "Student Success"
-                                },
-                                {
-                                    "id": "1487",
-                                    "name": "Social Welfare"
-                                },
-                                {
-                                    "id": "1526",
-                                    "name": "Accountancy"
-                                },
-                                {
-                                    "id": "1625",
-                                    "name": "Integrated Studies"
-                                },
-                                {
-                                    "id": "1699",
-                                    "name": "Economics & Finance"
-                                },
-                                {
-                                    "id": "1723",
-                                    "name": "Business Informatics"
-                                },
-                                {
-                                    "id": "1728",
-                                    "name": "World Languages & Literatures"
-                                },
-                                {
-                                    "id": "1776",
-                                    "name": "Poli-Science & Crim. Justice"
-                                },
-                                {
-                                    "id": "1785",
-                                    "name": "Literacy"
-                                },
-                                {
-                                    "id": "2682",
-                                    "name": "Drawing & Painting"
-                                }
-                            ],
-                            "id": "U2Nob29sLTY5OQ==",
-                            "legacyId": 699,
-                            "name": "Northern Kentucky University",
-                            "numRatings": 401,
-                            "state": "KY",
-                            "summary": {
-                                "campusCondition": 3.9181,
-                                "campusLocation": 4.0223,
-                                "careerOpportunities": 3.8983,
-                                "clubAndEventActivities": 3.6849,
-                                "foodQuality": 3.4318,
-                                "internetSpeed": 3.5558,
-                                "libraryCondition": 4.0372,
-                                "schoolReputation": 3.7543,
-                                "schoolSafety": 4.6016,
-                                "schoolSatisfaction": 4.0645,
-                                "socialActivities": 3.464
-                            }
-                        }
-                    },
-                    {
-                        "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
-                        "node": {
-                            "avgRatingRounded": 0,
-                            "city": "Highland height",
-                            "departments": [
-                                {
-                                    "id": "1",
-                                    "name": "Accounting"
-                                },
-                                {
-                                    "id": "2",
-                                    "name": "Agriculture"
-                                },
-                                {
-                                    "id": "3",
-                                    "name": "Anthropology"
-                                },
-                                {
-                                    "id": "4",
-                                    "name": "Architecture"
-                                },
-                                {
-                                    "id": "5",
-                                    "name": "Art History"
-                                },
-                                {
-                                    "id": "6",
-                                    "name": "Biology"
-                                },
-                                {
-                                    "id": "7",
-                                    "name": "Business"
-                                },
-                                {
-                                    "id": "8",
-                                    "name": "Chemistry"
-                                },
-                                {
-                                    "id": "9",
-                                    "name": "Classics"
-                                },
-                                {
-                                    "id": "10",
-                                    "name": "Communication"
-                                },
-                                {
-                                    "id": "11",
-                                    "name": "Computer Science"
-                                },
-                                {
-                                    "id": "12",
-                                    "name": "Criminal Justice"
-                                },
-                                {
-                                    "id": "13",
-                                    "name": "Culinary Arts"
-                                },
-                                {
-                                    "id": "14",
-                                    "name": "Design"
-                                },
-                                {
-                                    "id": "15",
-                                    "name": "Economics"
-                                },
-                                {
-                                    "id": "16",
-                                    "name": "Education"
-                                },
-                                {
-                                    "id": "17",
-                                    "name": "Engineering"
-                                },
-                                {
-                                    "id": "18",
-                                    "name": "English"
-                                },
-                                {
-                                    "id": "19",
-                                    "name": "Ethnic Studies"
-                                },
-                                {
-                                    "id": "20",
-                                    "name": "Film"
-                                },
-                                {
-                                    "id": "21",
-                                    "name": "Finance"
-                                },
-                                {
-                                    "id": "22",
-                                    "name": "Fine Arts"
-                                },
-                                {
-                                    "id": "23",
-                                    "name": "Geography"
-                                },
-                                {
-                                    "id": "24",
-                                    "name": "Geology"
-                                },
-                                {
-                                    "id": "25",
-                                    "name": "Graphic Arts"
-                                },
-                                {
-                                    "id": "26",
-                                    "name": "Health Science"
-                                },
-                                {
-                                    "id": "27",
-                                    "name": "History"
-                                },
-                                {
-                                    "id": "28",
-                                    "name": "Hospitality"
-                                },
-                                {
-                                    "id": "29",
-                                    "name": "Humanities"
-                                },
-                                {
-                                    "id": "30",
-                                    "name": "Information Science"
-                                },
-                                {
-                                    "id": "32",
-                                    "name": "Journalism"
-                                },
-                                {
-                                    "id": "33",
-                                    "name": "Languages"
-                                },
-                                {
-                                    "id": "34",
-                                    "name": "Law"
-                                },
-                                {
-                                    "id": "35",
-                                    "name": "Literature"
-                                },
-                                {
-                                    "id": "36",
-                                    "name": "Management"
-                                },
-                                {
-                                    "id": "37",
-                                    "name": "Marketing"
-                                },
-                                {
-                                    "id": "38",
-                                    "name": "Mathematics"
-                                },
-                                {
-                                    "id": "39",
-                                    "name": "Medicine"
-                                },
-                                {
-                                    "id": "40",
-                                    "name": "Music"
-                                },
-                                {
-                                    "id": "41",
-                                    "name": "Nursing"
-                                },
-                                {
-                                    "id": "42",
-                                    "name": "Philosophy"
-                                },
-                                {
-                                    "id": "43",
-                                    "name": "Physical Education"
-                                },
-                                {
-                                    "id": "44",
-                                    "name": "Physics"
-                                },
-                                {
-                                    "id": "45",
-                                    "name": "Political Science"
-                                },
-                                {
-                                    "id": "46",
-                                    "name": "Psychology"
-                                },
-                                {
-                                    "id": "47",
-                                    "name": "Religion"
-                                },
-                                {
-                                    "id": "48",
-                                    "name": "Science"
-                                },
-                                {
-                                    "id": "49",
-                                    "name": "Social Science"
-                                },
-                                {
-                                    "id": "50",
-                                    "name": "Social Work"
-                                },
-                                {
-                                    "id": "51",
-                                    "name": "Sociology"
-                                },
-                                {
-                                    "id": "52",
-                                    "name": "Theater"
-                                },
-                                {
-                                    "id": "53",
-                                    "name": "Women's Studies"
-                                },
-                                {
-                                    "id": "54",
-                                    "name": "Writing"
-                                }
-                            ],
-                            "id": "U2Nob29sLTE4NDQ3",
-                            "legacyId": 18447,
-                            "name": "Northern Kentucky University",
-                            "numRatings": 0,
-                            "state": "KY",
-                            "summary": {
-                                "campusCondition": 0,
-                                "campusLocation": 0,
-                                "careerOpportunities": 0,
-                                "clubAndEventActivities": 0,
-                                "foodQuality": 0,
-                                "internetSpeed": 0,
-                                "libraryCondition": 0,
-                                "schoolReputation": 0,
-                                "schoolSafety": 0,
-                                "schoolSatisfaction": 0,
-                                "socialActivities": 0
-                            }
-                        }
-                    }
-                ],
-                "pageInfo": {
-                    "endCursor": "YXJyYXljb25uZWN0aW9uOjE=",
-                    "hasNextPage": false
+[
+    {
+        "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+        "node": {
+            "avgRatingRounded": 3.8000000000000003,
+            "city": "Covington",
+            "departments": [
+                {
+                    "id": "2",
+                    "name": "Agriculture"
+                },
+                {
+                    "id": "3",
+                    "name": "Anthropology"
+                },
+                {
+                    "id": "4",
+                    "name": "Architecture"
+                },
+                {
+                    "id": "5",
+                    "name": "Art History"
+                },
+                {
+                    "id": "6",
+                    "name": "Biology"
+                },
+                {
+                    "id": "7",
+                    "name": "Business"
+                },
+                {
+                    "id": "8",
+                    "name": "Chemistry"
+                },
+                {
+                    "id": "9",
+                    "name": "Classics"
+                },
+                {
+                    "id": "10",
+                    "name": "Communication"
+                },
+                {
+                    "id": "11",
+                    "name": "Computer Science"
+                },
+                {
+                    "id": "13",
+                    "name": "Culinary Arts"
+                },
+                {
+                    "id": "14",
+                    "name": "Design"
+                },
+                {
+                    "id": "16",
+                    "name": "Education"
+                },
+                {
+                    "id": "17",
+                    "name": "Engineering"
+                },
+                {
+                    "id": "18",
+                    "name": "English"
+                },
+                {
+                    "id": "19",
+                    "name": "Ethnic Studies"
+                },
+                {
+                    "id": "20",
+                    "name": "Film"
+                },
+                {
+                    "id": "21",
+                    "name": "Finance"
+                },
+                {
+                    "id": "22",
+                    "name": "Fine Arts"
+                },
+                {
+                    "id": "23",
+                    "name": "Geography"
+                },
+                {
+                    "id": "24",
+                    "name": "Geology"
+                },
+                {
+                    "id": "25",
+                    "name": "Graphic Arts"
+                },
+                {
+                    "id": "26",
+                    "name": "Health Science"
+                },
+                {
+                    "id": "27",
+                    "name": "History"
+                },
+                {
+                    "id": "28",
+                    "name": "Hospitality"
+                },
+                {
+                    "id": "29",
+                    "name": "Humanities"
+                },
+                {
+                    "id": "30",
+                    "name": "Information Science"
+                },
+                {
+                    "id": "32",
+                    "name": "Journalism"
+                },
+                {
+                    "id": "34",
+                    "name": "Law"
+                },
+                {
+                    "id": "35",
+                    "name": "Literature"
+                },
+                {
+                    "id": "36",
+                    "name": "Management"
+                },
+                {
+                    "id": "37",
+                    "name": "Marketing"
+                },
+                {
+                    "id": "38",
+                    "name": "Mathematics"
+                },
+                {
+                    "id": "39",
+                    "name": "Medicine"
+                },
+                {
+                    "id": "40",
+                    "name": "Music"
+                },
+                {
+                    "id": "41",
+                    "name": "Nursing"
+                },
+                {
+                    "id": "42",
+                    "name": "Philosophy"
+                },
+                {
+                    "id": "43",
+                    "name": "Physical Education"
+                },
+                {
+                    "id": "44",
+                    "name": "Physics"
+                },
+                {
+                    "id": "46",
+                    "name": "Psychology"
+                },
+                {
+                    "id": "47",
+                    "name": "Religion"
+                },
+                {
+                    "id": "48",
+                    "name": "Science"
+                },
+                {
+                    "id": "49",
+                    "name": "Social Science"
+                },
+                {
+                    "id": "50",
+                    "name": "Social Work"
+                },
+                {
+                    "id": "51",
+                    "name": "Sociology"
+                },
+                {
+                    "id": "52",
+                    "name": "Theater"
+                },
+                {
+                    "id": "53",
+                    "name": "Women's Studies"
+                },
+                {
+                    "id": "54",
+                    "name": "Writing"
+                },
+                {
+                    "id": "65",
+                    "name": "German"
+                },
+                {
+                    "id": "70",
+                    "name": "French"
+                },
+                {
+                    "id": "80",
+                    "name": "Spanish"
+                },
+                {
+                    "id": "118",
+                    "name": "Honors"
+                },
+                {
+                    "id": "135",
+                    "name": "International Studies"
+                },
+                {
+                    "id": "140",
+                    "name": "Statistics"
+                },
+                {
+                    "id": "149",
+                    "name": "Russian"
+                },
+                {
+                    "id": "161",
+                    "name": "Business Law"
+                },
+                {
+                    "id": "170",
+                    "name": "Japanese"
+                },
+                {
+                    "id": "189",
+                    "name": "Biological Sciences"
+                },
+                {
+                    "id": "246",
+                    "name": "Information Systems"
+                },
+                {
+                    "id": "332",
+                    "name": "Interdisciplinary Studies"
+                },
+                {
+                    "id": "685",
+                    "name": "Radio, TV & Film"
+                },
+                {
+                    "id": "732",
+                    "name": "University Studies"
+                },
+                {
+                    "id": "1222",
+                    "name": "Organizational Leadership"
+                },
+                {
+                    "id": "1264",
+                    "name": "Construction Management"
+                },
+                {
+                    "id": "1452",
+                    "name": "Student Success"
+                },
+                {
+                    "id": "1487",
+                    "name": "Social Welfare"
+                },
+                {
+                    "id": "1526",
+                    "name": "Accountancy"
+                },
+                {
+                    "id": "1625",
+                    "name": "Integrated Studies"
+                },
+                {
+                    "id": "1699",
+                    "name": "Economics & Finance"
+                },
+                {
+                    "id": "1723",
+                    "name": "Business Informatics"
+                },
+                {
+                    "id": "1728",
+                    "name": "World Languages & Literatures"
+                },
+                {
+                    "id": "1776",
+                    "name": "Poli-Science & Crim. Justice"
+                },
+                {
+                    "id": "1785",
+                    "name": "Literacy"
+                },
+                {
+                    "id": "2682",
+                    "name": "Drawing & Painting"
                 }
+            ],
+            "id": "U2Nob29sLTY5OQ==",
+            "legacyId": 699,
+            "name": "Northern Kentucky University",
+            "numRatings": 401,
+            "state": "KY",
+            "summary": {
+                "campusCondition": 3.9181,
+                "campusLocation": 4.0223,
+                "careerOpportunities": 3.8983,
+                "clubAndEventActivities": 3.6849,
+                "foodQuality": 3.4318,
+                "internetSpeed": 3.5558,
+                "libraryCondition": 4.0372,
+                "schoolReputation": 3.7543,
+                "schoolSafety": 4.6016,
+                "schoolSatisfaction": 4.0645,
+                "socialActivities": 3.464
+            }
+        }
+    },
+    {
+        "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+        "node": {
+            "avgRatingRounded": 0,
+            "city": "Highland height",
+            "departments": [
+                {
+                    "id": "1",
+                    "name": "Accounting"
+                },
+                {
+                    "id": "2",
+                    "name": "Agriculture"
+                },
+                {
+                    "id": "3",
+                    "name": "Anthropology"
+                },
+                {
+                    "id": "4",
+                    "name": "Architecture"
+                },
+                {
+                    "id": "5",
+                    "name": "Art History"
+                },
+                {
+                    "id": "6",
+                    "name": "Biology"
+                },
+                {
+                    "id": "7",
+                    "name": "Business"
+                },
+                {
+                    "id": "8",
+                    "name": "Chemistry"
+                },
+                {
+                    "id": "9",
+                    "name": "Classics"
+                },
+                {
+                    "id": "10",
+                    "name": "Communication"
+                },
+                {
+                    "id": "11",
+                    "name": "Computer Science"
+                },
+                {
+                    "id": "12",
+                    "name": "Criminal Justice"
+                },
+                {
+                    "id": "13",
+                    "name": "Culinary Arts"
+                },
+                {
+                    "id": "14",
+                    "name": "Design"
+                },
+                {
+                    "id": "15",
+                    "name": "Economics"
+                },
+                {
+                    "id": "16",
+                    "name": "Education"
+                },
+                {
+                    "id": "17",
+                    "name": "Engineering"
+                },
+                {
+                    "id": "18",
+                    "name": "English"
+                },
+                {
+                    "id": "19",
+                    "name": "Ethnic Studies"
+                },
+                {
+                    "id": "20",
+                    "name": "Film"
+                },
+                {
+                    "id": "21",
+                    "name": "Finance"
+                },
+                {
+                    "id": "22",
+                    "name": "Fine Arts"
+                },
+                {
+                    "id": "23",
+                    "name": "Geography"
+                },
+                {
+                    "id": "24",
+                    "name": "Geology"
+                },
+                {
+                    "id": "25",
+                    "name": "Graphic Arts"
+                },
+                {
+                    "id": "26",
+                    "name": "Health Science"
+                },
+                {
+                    "id": "27",
+                    "name": "History"
+                },
+                {
+                    "id": "28",
+                    "name": "Hospitality"
+                },
+                {
+                    "id": "29",
+                    "name": "Humanities"
+                },
+                {
+                    "id": "30",
+                    "name": "Information Science"
+                },
+                {
+                    "id": "32",
+                    "name": "Journalism"
+                },
+                {
+                    "id": "33",
+                    "name": "Languages"
+                },
+                {
+                    "id": "34",
+                    "name": "Law"
+                },
+                {
+                    "id": "35",
+                    "name": "Literature"
+                },
+                {
+                    "id": "36",
+                    "name": "Management"
+                },
+                {
+                    "id": "37",
+                    "name": "Marketing"
+                },
+                {
+                    "id": "38",
+                    "name": "Mathematics"
+                },
+                {
+                    "id": "39",
+                    "name": "Medicine"
+                },
+                {
+                    "id": "40",
+                    "name": "Music"
+                },
+                {
+                    "id": "41",
+                    "name": "Nursing"
+                },
+                {
+                    "id": "42",
+                    "name": "Philosophy"
+                },
+                {
+                    "id": "43",
+                    "name": "Physical Education"
+                },
+                {
+                    "id": "44",
+                    "name": "Physics"
+                },
+                {
+                    "id": "45",
+                    "name": "Political Science"
+                },
+                {
+                    "id": "46",
+                    "name": "Psychology"
+                },
+                {
+                    "id": "47",
+                    "name": "Religion"
+                },
+                {
+                    "id": "48",
+                    "name": "Science"
+                },
+                {
+                    "id": "49",
+                    "name": "Social Science"
+                },
+                {
+                    "id": "50",
+                    "name": "Social Work"
+                },
+                {
+                    "id": "51",
+                    "name": "Sociology"
+                },
+                {
+                    "id": "52",
+                    "name": "Theater"
+                },
+                {
+                    "id": "53",
+                    "name": "Women's Studies"
+                },
+                {
+                    "id": "54",
+                    "name": "Writing"
+                }
+            ],
+            "id": "U2Nob29sLTE4NDQ3",
+            "legacyId": 18447,
+            "name": "Northern Kentucky University",
+            "numRatings": 0,
+            "state": "KY",
+            "summary": {
+                "campusCondition": 0,
+                "campusLocation": 0,
+                "careerOpportunities": 0,
+                "clubAndEventActivities": 0,
+                "foodQuality": 0,
+                "internetSpeed": 0,
+                "libraryCondition": 0,
+                "schoolReputation": 0,
+                "schoolSafety": 0,
+                "schoolSatisfaction": 0,
+                "socialActivities": 0
             }
         }
     }
-}
+]

@@ -1,47 +1,41 @@
 {
-    "data": {
-        "search": {
-            "teachers": {
-                "didFallback": false,
-                "edges": [
-                    {
-                        "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
-                        "node": {
-                            "__typename": "Teacher",
-                            "avgDifficulty": 3,
-                            "avgRating": 4.4,
-                            "department": "Computer Science",
-                            "firstName": "Nicholas",
-                            "id": "VGVhY2hlci0yNjAxNjU1",
-                            "isSaved": false,
-                            "lastName": "Caporusso",
-                            "legacyId": 2601655,
-                            "numRatings": 13,
-                            "school": {
-                                "id": "U2Nob29sLTY5OQ==",
-                                "name": "Northern Kentucky University"
-                            },
-                            "wouldTakeAgainPercent": 91.6667
-                        }
-                    }
-                ],
-                "filters": [
-                    {
-                        "field": "teacherdepartment_s",
-                        "options": [
-                            {
-                                "id": "RGVwYXJ0bWVudC0xMQ==",
-                                "value": "computer science"
-                            }
-                        ]
-                    }
-                ],
-                "pageInfo": {
-                    "endCursor": "YXJyYXljb25uZWN0aW9uOjA=",
-                    "hasNextPage": false
+    "didFallback": false,
+    "edges": [
+        {
+            "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+            "node": {
+                "__typename": "Teacher",
+                "avgDifficulty": 3,
+                "avgRating": 4.4,
+                "department": "Computer Science",
+                "firstName": "Nicholas",
+                "id": "VGVhY2hlci0yNjAxNjU1",
+                "isSaved": false,
+                "lastName": "Caporusso",
+                "legacyId": 2601655,
+                "numRatings": 13,
+                "school": {
+                    "id": "U2Nob29sLTY5OQ==",
+                    "name": "Northern Kentucky University"
                 },
-                "resultCount": 1
+                "wouldTakeAgainPercent": 91.6667
             }
         }
-    }
+    ],
+    "filters": [
+        {
+            "field": "teacherdepartment_s",
+            "options": [
+                {
+                    "id": "RGVwYXJ0bWVudC0xMQ==",
+                    "value": "computer science"
+                }
+            ]
+        }
+    ],
+    "pageInfo": {
+        "endCursor": "YXJyYXljb25uZWN0aW9uOjA=",
+        "hasNextPage": false
+    },
+    "resultCount": 1
 }
