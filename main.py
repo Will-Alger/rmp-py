@@ -22,9 +22,10 @@ schoolID = schoolQuery[0]["node"]["id"]
 
 # Grab a professor
 professors = professorQuery = scraper.get_professors(
-    schoolID, 
+    # schoolID, 
+    cursor="",
     count=12, # count is a required field
-    name="Nicholas Caporusso" # name is optional. pass '' to have no search parameters
+    name="" # name is optional. pass '' to have no search parameters
 )
 
 # Get the first teacher from that list

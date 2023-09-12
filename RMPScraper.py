@@ -8,7 +8,7 @@ class RMPScraper:
         # do something
         pass
 
-    def get_school(self, name):
+    def get_school(self, name, log=False):
         querySchool = read_graphql('QuerySchool.graphql')
         payload = {
             "query" : querySchool,
@@ -19,7 +19,7 @@ class RMPScraper:
             }
         }
         data = send_request(payload, url, query_headers)['data']['newSearch']['schools']['edges']
-        write_to_file(data, 'university.json')
+        if log : write_to_file(data, 'university.json')
         return data
 
     '''
@@ -46,8 +46,9 @@ class RMPScraper:
             get_professors("VGVhY2hlci0yNjAxNjU1", name="John Bob")
     '''
 
-    def get_professors(self, schoolID, **kwargs):
+    def get_professors(self, **kwargs):
         queryProfessors = read_graphql('QueryProfessors.graphql')
+        schoolID = kwargs.get('schoolID', '')
         count = kwargs.get('count', 5)
         cursor = kwargs.get('cursor', '')
         name = kwargs.get('name', '') 
