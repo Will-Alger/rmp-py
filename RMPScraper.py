@@ -46,7 +46,7 @@ class RMPScraper:
             get_professors("VGVhY2hlci0yNjAxNjU1", name="John Bob")
     '''
 
-    def get_professors(self, **kwargs):
+    def get_professors(self, log=False, **kwargs,):
         queryProfessors = read_graphql('QueryProfessors.graphql')
         schoolID = kwargs.get('schoolID', '')
         count = kwargs.get('count', 5)
@@ -68,7 +68,7 @@ class RMPScraper:
             }
         }
         data = send_request(payload, url, query_headers)['data']['search']['teachers']
-        write_to_file(data, 'professors.json')
+        if log : write_to_file(data, 'professors.json')
         return data
 
     '''
@@ -88,7 +88,7 @@ class RMPScraper:
              get_reviews(VGVhY2hlci0yNjAxNjU1, count=25)
      
     '''   
-    def get_reviews(self, professorID, **kwargs):
+    def get_reviews(self, professorID, log=False, **kwargs):
         queryReviews = read_graphql('QueryReviews.graphql')
         count = kwargs.get('count', 5)
         cursor = kwargs.get('cursor', '')
@@ -103,7 +103,7 @@ class RMPScraper:
             }
         }
         data = send_request(payload, url, query_headers)['data']
-        write_to_file(data, 'reviews.json')
+        if log : write_to_file(data, 'reviews.json')
         return data
 
 

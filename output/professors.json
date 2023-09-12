@@ -5,20 +5,240 @@
             "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
             "node": {
                 "__typename": "Teacher",
-                "avgDifficulty": 3,
-                "avgRating": 4.4,
+                "avgDifficulty": 3.2,
+                "avgRating": 3.3,
                 "department": "Computer Science",
-                "firstName": "Nicholas",
-                "id": "VGVhY2hlci0yNjAxNjU1",
+                "firstName": "Kathleen",
+                "id": "VGVhY2hlci03NA==",
                 "isSaved": false,
-                "lastName": "Caporusso",
-                "legacyId": 2601655,
-                "numRatings": 13,
+                "lastName": "McCoy",
+                "legacyId": 74,
+                "numRatings": 30,
                 "school": {
-                    "id": "U2Nob29sLTY5OQ==",
-                    "name": "Northern Kentucky University"
+                    "id": "U2Nob29sLTEwOTQ=",
+                    "name": "University of Delaware"
                 },
-                "wouldTakeAgainPercent": 91.6667
+                "wouldTakeAgainPercent": 100
+            }
+        },
+        {
+            "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+            "node": {
+                "__typename": "Teacher",
+                "avgDifficulty": 3.1,
+                "avgRating": 2.6,
+                "department": "Mathematics",
+                "firstName": "David",
+                "id": "VGVhY2hlci05Mg==",
+                "isSaved": false,
+                "lastName": "Bellamy",
+                "legacyId": 92,
+                "numRatings": 124,
+                "school": {
+                    "id": "U2Nob29sLTEwOTQ=",
+                    "name": "University of Delaware"
+                },
+                "wouldTakeAgainPercent": 100
+            }
+        },
+        {
+            "cursor": "YXJyYXljb25uZWN0aW9uOjI=",
+            "node": {
+                "__typename": "Teacher",
+                "avgDifficulty": 3.2,
+                "avgRating": 4,
+                "department": "Science",
+                "firstName": "David",
+                "id": "VGVhY2hlci0xMTA=",
+                "isSaved": false,
+                "lastName": "Smith",
+                "legacyId": 110,
+                "numRatings": 103,
+                "school": {
+                    "id": "U2Nob29sLTEwOTQ=",
+                    "name": "University of Delaware"
+                },
+                "wouldTakeAgainPercent": -1
+            }
+        },
+        {
+            "cursor": "YXJyYXljb25uZWN0aW9uOjM=",
+            "node": {
+                "__typename": "Teacher",
+                "avgDifficulty": 3.3,
+                "avgRating": 3.7,
+                "department": "Communication",
+                "firstName": "Riley",
+                "id": "VGVhY2hlci0xMjc=",
+                "isSaved": false,
+                "lastName": "Maynard",
+                "legacyId": 127,
+                "numRatings": 23,
+                "school": {
+                    "id": "U2Nob29sLTkyNg==",
+                    "name": "Southern Illinois University - Edwardsville"
+                },
+                "wouldTakeAgainPercent": -1
+            }
+        },
+        {
+            "cursor": "YXJyYXljb25uZWN0aW9uOjQ=",
+            "node": {
+                "__typename": "Teacher",
+                "avgDifficulty": 3.1,
+                "avgRating": 4.2,
+                "department": "Physics",
+                "firstName": "Fred",
+                "id": "VGVhY2hlci0xMzE=",
+                "isSaved": false,
+                "lastName": "Grosse",
+                "legacyId": 131,
+                "numRatings": 9,
+                "school": {
+                    "id": "U2Nob29sLTk4OQ==",
+                    "name": "Susquehanna University"
+                },
+                "wouldTakeAgainPercent": 100
+            }
+        },
+        {
+            "cursor": "YXJyYXljb25uZWN0aW9uOjU=",
+            "node": {
+                "__typename": "Teacher",
+                "avgDifficulty": 3.1,
+                "avgRating": 2.7,
+                "department": "English",
+                "firstName": "Rachana",
+                "id": "VGVhY2hlci0xMzI=",
+                "isSaved": false,
+                "lastName": "Sachdev",
+                "legacyId": 132,
+                "numRatings": 25,
+                "school": {
+                    "id": "U2Nob29sLTk4OQ==",
+                    "name": "Susquehanna University"
+                },
+                "wouldTakeAgainPercent": 90
+            }
+        },
+        {
+            "cursor": "YXJyYXljb25uZWN0aW9uOjY=",
+            "node": {
+                "__typename": "Teacher",
+                "avgDifficulty": 3,
+                "avgRating": 2.5,
+                "department": "Folklore",
+                "firstName": "Mellonee",
+                "id": "VGVhY2hlci0xMzc=",
+                "isSaved": false,
+                "lastName": "Burnim",
+                "legacyId": 137,
+                "numRatings": 14,
+                "school": {
+                    "id": "U2Nob29sLTQ0MA==",
+                    "name": "Indiana University Bloomington"
+                },
+                "wouldTakeAgainPercent": -1
+            }
+        },
+        {
+            "cursor": "YXJyYXljb25uZWN0aW9uOjc=",
+            "node": {
+                "__typename": "Teacher",
+                "avgDifficulty": 3.9,
+                "avgRating": 2.3,
+                "department": "Business",
+                "firstName": "Mark",
+                "id": "VGVhY2hlci0xNDE=",
+                "isSaved": false,
+                "lastName": "Wardell",
+                "legacyId": 141,
+                "numRatings": 14,
+                "school": {
+                    "id": "U2Nob29sLTc1OA==",
+                    "name": "Pennsylvania State University"
+                },
+                "wouldTakeAgainPercent": -1
+            }
+        },
+        {
+            "cursor": "YXJyYXljb25uZWN0aW9uOjg=",
+            "node": {
+                "__typename": "Teacher",
+                "avgDifficulty": 3.8,
+                "avgRating": 4.1,
+                "department": "English",
+                "firstName": "Perry",
+                "id": "VGVhY2hlci0xNDc=",
+                "isSaved": false,
+                "lastName": "Lentz",
+                "legacyId": 147,
+                "numRatings": 33,
+                "school": {
+                    "id": "U2Nob29sLTQ4Ng==",
+                    "name": "Kenyon College"
+                },
+                "wouldTakeAgainPercent": 100
+            }
+        },
+        {
+            "cursor": "YXJyYXljb25uZWN0aW9uOjk=",
+            "node": {
+                "__typename": "Teacher",
+                "avgDifficulty": 2.9,
+                "avgRating": 4.8,
+                "department": "Business",
+                "firstName": "David",
+                "id": "VGVhY2hlci0xNTE=",
+                "isSaved": false,
+                "lastName": "Good",
+                "legacyId": 151,
+                "numRatings": 62,
+                "school": {
+                    "id": "U2Nob29sLTM3OQ==",
+                    "name": "Grand Valley State University"
+                },
+                "wouldTakeAgainPercent": 100
+            }
+        },
+        {
+            "cursor": "YXJyYXljb25uZWN0aW9uOjEw",
+            "node": {
+                "__typename": "Teacher",
+                "avgDifficulty": 4.6,
+                "avgRating": 3.5,
+                "department": "Physician Assistant Studies",
+                "firstName": "Terri",
+                "id": "VGVhY2hlci0xNjM=",
+                "isSaved": false,
+                "lastName": "Bacon-Baguley",
+                "legacyId": 163,
+                "numRatings": 9,
+                "school": {
+                    "id": "U2Nob29sLTM3OQ==",
+                    "name": "Grand Valley State University"
+                },
+                "wouldTakeAgainPercent": 0
+            }
+        },
+        {
+            "cursor": "YXJyYXljb25uZWN0aW9uOjEx",
+            "node": {
+                "__typename": "Teacher",
+                "avgDifficulty": 3.7,
+                "avgRating": 3.7,
+                "department": "Science",
+                "firstName": "Brian",
+                "id": "VGVhY2hlci0xNjQ=",
+                "isSaved": false,
+                "lastName": "Curry",
+                "legacyId": 164,
+                "numRatings": 35,
+                "school": {
+                    "id": "U2Nob29sLTM3OQ==",
+                    "name": "Grand Valley State University"
+                },
+                "wouldTakeAgainPercent": 100
             }
         }
     ],
@@ -27,15 +247,411 @@
             "field": "teacherdepartment_s",
             "options": [
                 {
+                    "id": "RGVwYXJ0bWVudC0x",
+                    "value": "accounting"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yNDA=",
+                    "value": "african-american studies"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0y",
+                    "value": "agriculture"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0z",
+                    "value": "anthropology"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00",
+                    "value": "architecture"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xMTM=",
+                    "value": "art"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC01",
+                    "value": "art history"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC03OQ==",
+                    "value": "astronomy"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC01Ng==",
+                    "value": "aviation"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xODk=",
+                    "value": "biological sciences"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC02",
+                    "value": "biology"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC03",
+                    "value": "business"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xNTQ=",
+                    "value": "business administration"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC02MQ==",
+                    "value": "chemical engineering"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC04",
+                    "value": "chemistry"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xMjc=",
+                    "value": "child development"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC02Mg==",
+                    "value": "civil engineering"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC05",
+                    "value": "classics"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xMA==",
+                    "value": "communication"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC02OTA=",
+                    "value": "communication studies"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xMzM2",
+                    "value": "computer information systems"
+                },
+                {
                     "id": "RGVwYXJ0bWVudC0xMQ==",
                     "value": "computer science"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xNjM=",
+                    "value": "counseling"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xMg==",
+                    "value": "criminal justice"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xMw==",
+                    "value": "culinary arts"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xNTk=",
+                    "value": "dance"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xNA==",
+                    "value": "design"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC01ODY=",
+                    "value": "early childhood education"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC03OA==",
+                    "value": "earth science"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xNQ==",
+                    "value": "economics"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xNg==",
+                    "value": "education"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xMDc=",
+                    "value": "electrical engineering"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xNw==",
+                    "value": "engineering"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xOA==",
+                    "value": "english"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xNDA2",
+                    "value": "english as a second language"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xMDg=",
+                    "value": "environmental science"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yNjQ=",
+                    "value": "environmental studies"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xOQ==",
+                    "value": "ethnic studies"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yMA==",
+                    "value": "film"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yMQ==",
+                    "value": "finance"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yMg==",
+                    "value": "fine arts"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yODE=",
+                    "value": "foreign languages"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC03MA==",
+                    "value": "french"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yMw==",
+                    "value": "geography"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yNA==",
+                    "value": "geology"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC02NQ==",
+                    "value": "german"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00MDI=",
+                    "value": "government"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yNQ==",
+                    "value": "graphic arts"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC04MDU=",
+                    "value": "health"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yNg==",
+                    "value": "health science"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yNw==",
+                    "value": "history"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yOA==",
+                    "value": "hospitality"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC05OTk=",
+                    "value": "human development"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xODM=",
+                    "value": "human services"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yOQ==",
+                    "value": "humanities"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zMA==",
+                    "value": "information science"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yNDY=",
+                    "value": "information systems"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zODE=",
+                    "value": "information technology"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xMzU=",
+                    "value": "international studies"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zMg==",
+                    "value": "journalism"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zMzM=",
+                    "value": "kinesiology"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zMw==",
+                    "value": "languages"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zNA==",
+                    "value": "law"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xMjk=",
+                    "value": "linguistics"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zNQ==",
+                    "value": "literature"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zNg==",
+                    "value": "management"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zNw==",
+                    "value": "marketing"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zOA==",
+                    "value": "mathematics"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC02OQ==",
+                    "value": "mechanical engineering"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zOQ==",
+                    "value": "medicine"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00NjU=",
+                    "value": "modern languages"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00MA==",
+                    "value": "music"
+                },
+                {
+                    "id": "",
+                    "value": "not specified"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00MQ==",
+                    "value": "nursing"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zNTE=",
+                    "value": "nutrition"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00Mg==",
+                    "value": "philosophy"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC05Ng==",
+                    "value": "photography"
+                },
+                {
+                    "id": "",
+                    "value": "physical ed"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00Mw==",
+                    "value": "physical education"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00NA==",
+                    "value": "physics"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00NQ==",
+                    "value": "political science"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00Ng==",
+                    "value": "psychology"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yNjc=",
+                    "value": "public administration"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC01ODI=",
+                    "value": "public health"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC05Nw==",
+                    "value": "reading"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00Nw==",
+                    "value": "religion"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0zMzk=",
+                    "value": "religious studies"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00OA==",
+                    "value": "science"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC00OQ==",
+                    "value": "social science"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC01MA==",
+                    "value": "social work"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC01MQ==",
+                    "value": "sociology"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC04MA==",
+                    "value": "spanish"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0yOTc=",
+                    "value": "speech"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xMzg=",
+                    "value": "speech communication"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xNDA=",
+                    "value": "statistics"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC03MzE=",
+                    "value": "technology"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC01Mg==",
+                    "value": "theater"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC0xNDQ=",
+                    "value": "theology"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC01Mw==",
+                    "value": "women's studies"
+                },
+                {
+                    "id": "RGVwYXJ0bWVudC01NA==",
+                    "value": "writing"
                 }
             ]
         }
     ],
     "pageInfo": {
-        "endCursor": "YXJyYXljb25uZWN0aW9uOjA=",
-        "hasNextPage": false
+        "endCursor": "YXJyYXljb25uZWN0aW9uOjEx",
+        "hasNextPage": true
     },
-    "resultCount": 1
+    "resultCount": 2018966
 }
