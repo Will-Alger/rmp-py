@@ -5,12 +5,12 @@ CREATE TABLE Teachers (
     avgRating REAL,
     department TEXT,
     firstName TEXT,
-    id TEXT PRIMARY KEY,
+    id TEXT,
     isSaved BOOLEAN,
     lastName TEXT,
     legacyId INTEGER,
-    numRatings INTEGER,
     schoolId TEXT,
     schoolName TEXT,
-    wouldTakeAgainPercent REAL
+    wouldTakeAgainPercent REAL,
+    PRIMARY KEY (id)
 );
