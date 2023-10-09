@@ -936,11 +936,39 @@
                         "thumbsUpTotal": 0,
                         "wouldTakeAgain": null
                     }
+                },
+                {
+                    "cursor": "YXJyYXljb25uZWN0aW9uOjMw",
+                    "node": {
+                        "__typename": "Rating",
+                        "adminReviewedAt": "2007-10-27 04:28:23 +0000 UTC",
+                        "attendanceMandatory": "",
+                        "clarityRating": 4,
+                        "class": "CISC181",
+                        "comment": "Brilliant, challenging, very helpful.  Sometimes lost the class during lecture.",
+                        "createdByUser": false,
+                        "date": "1999-10-01 00:00:00 +0000 UTC",
+                        "difficultyRating": 3,
+                        "flagStatus": "UNFLAGGED",
+                        "grade": "",
+                        "helpfulRating": 5,
+                        "id": "UmF0aW5nLTg4",
+                        "isForCredit": false,
+                        "isForOnlineClass": false,
+                        "legacyId": 88,
+                        "ratingTags": "",
+                        "teacherNote": null,
+                        "textbookUse": null,
+                        "thumbs": [],
+                        "thumbsDownTotal": 0,
+                        "thumbsUpTotal": 0,
+                        "wouldTakeAgain": null
+                    }
                 }
             ],
             "pageInfo": {
-                "endCursor": "YXJyYXljb25uZWN0aW9uOjI5",
-                "hasNextPage": true
+                "endCursor": "YXJyYXljb25uZWN0aW9uOjMw",
+                "hasNextPage": false
             }
         },
         "school": {

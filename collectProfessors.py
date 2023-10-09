@@ -18,43 +18,6 @@ scraper = RMPScraper()
 # Usage
 db_manager = SQLiteManager('E:/rmp-py-db/rmp-py.db')
 
-
-
-def insert_teacher(data, connection):
-    cursor = connection.cursor()
-
-    cursor.execute('''INSERT INTO Teachers (
-        typename,
-        avgDifficulty,
-        avgRating,
-        department,
-        firstName,
-        id,
-        isSaved,
-        lastName,
-        legacyId,
-        numRatings,
-        schoolId,
-        schoolName,
-        wouldTakeAgainPercent) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)''',
-        (
-            data["__typename"],
-            data["avgDifficulty"],
-            data["avgRating"],
-            data["department"],
-            data["firstName"],
-            data["id"],
-            data["isSaved"],
-            data["lastName"],
-            data["legacyId"],
-            data["numRatings"],
-            data["school"]["id"],
-            data["school"]["name"],
-            data["wouldTakeAgainPercent"]
-        )
-    )
-    connection.commit()
-
 def insert_teachers(data, connection):
     cursor = connection.cursor()
     for edge in data['edges']:
