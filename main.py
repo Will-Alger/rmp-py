@@ -55,6 +55,8 @@ teacherReviews = scraper.get_reviews(
     count=teacherReviewCount,
 )
 
+schools = scraper.get_school("Washtenaw community college", True)
+
 ratings = teacherReviews['node']['ratings']['edges']
    
 def print_review_details(reviews):
