@@ -25,9 +25,6 @@ class RMPScraper:
     '''
     get_professors():
     
-        Args:
-            schoolID (str): Required parameter to specify the ID of the school.
-    
         Optional keyword arguments (**kwargs):
             count (int): Number of professors to return, defaults to 5 if not specified.
             cursor (str): The professorID from where to start collecting professors in pagination,
@@ -46,7 +43,7 @@ class RMPScraper:
             get_professors("VGVhY2hlci0yNjAxNjU1", name="John Bob")
     '''
 
-    def get_professors(self, **kwargs):
+    def get_professors(self, log=False, **kwargs,):
         queryProfessors = read_graphql('QueryProfessors.graphql')
         schoolID = kwargs.get('schoolID', '')
         count = kwargs.get('count', 5)
@@ -68,7 +65,7 @@ class RMPScraper:
             }
         }
         data = send_request(payload, url, query_headers)['data']['search']['teachers']
-        write_to_file(data, 'professors.json')
+        if log : write_to_file(data, 'professors.json')
         return data
 
     '''
@@ -88,7 +85,7 @@ class RMPScraper:
              get_reviews(VGVhY2hlci0yNjAxNjU1, count=25)
      
     '''   
-    def get_reviews(self, professorID, **kwargs):
+    def get_reviews(self, professorID, log=False, **kwargs):
         queryReviews = read_graphql('QueryReviews.graphql')
         count = kwargs.get('count', 5)
         cursor = kwargs.get('cursor', '')
@@ -103,7 +100,7 @@ class RMPScraper:
             }
         }
         data = send_request(payload, url, query_headers)['data']
-        write_to_file(data, 'reviews.json')
+        if log : write_to_file(data, 'reviews.json')
         return data
 
 
@@ -114,13 +111,21 @@ def read_graphql(file_name):
     with open(f'./graphql/{file_name}', 'r') as file:
         return file.read().replace('\n', '')
 
-def send_request(payload, url, headers):
+import time
+def send_request(payload, url, headers, max_retries=10):
     payload = json.dumps(payload)
-    response = requests.request("POST", url, headers=headers, data=payload)
-    if response.status_code != 200:
-        raise Exception(f"Request failed with status {response.status_code}")
-    data = response.json()
-    return data
+
+    for i in range(max_retries):  # define maximum number of retries
+        try:
+            response = requests.request("POST", url, headers=headers, data=payload)
+            response.raise_for_status()
+            data = response.json()
+            return data
+        except (requests.exceptions.RequestException, Exception) as e:
+            print(f"Error occurred: {e}. Retrying ({i+1}/{max_retries})")
+            time.sleep(300) 
+    raise Exception("Failed to send request after maximum retries.")
+
 
 def write_to_file(data, filename):
     output_dir = './output'
