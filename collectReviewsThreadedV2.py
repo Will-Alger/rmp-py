@@ -2,7 +2,7 @@ from RMPScraper import RMPScraper
 from db import SQLiteManager
 scraper = RMPScraper()
 
-db_manager = SQLiteManager('E:/rmp-py-db/rmp-py.db')
+db_manager = SQLiteManager('E:/db.sqlite')
 
 def insert_reviews(data, connection):
     cursor = connection.cursor()
@@ -24,7 +24,7 @@ def insert_reviews(data, connection):
        
     for edge in edges:
         try:
-            cursor.execute('''INSERT INTO Reviews (
+            cursor.execute('''INSERT OR REPLACE INTO Reviews (
             id,
             typename,
             attendanceMandatory,
@@ -46,7 +46,8 @@ def insert_reviews(data, connection):
             thumbsDownTotal,
             thumbsUpTotal,
             wouldTakeAgain,
-            teacherId) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+            teacherId,
+            qualityRating) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
             (
                 edge['node']["id"],
                 edge['node']["__typename"],
@@ -69,7 +70,8 @@ def insert_reviews(data, connection):
                 edge['node']["thumbsDownTotal"],
                 edge['node']["thumbsUpTotal"],
                 edge['node']["wouldTakeAgain"],
-                teacherID
+                teacherID,
+                edge['node']['qualityRating'],
             ))
         except Exception as e:
             print(f"Error occurred: {e}")
@@ -110,30 +112,33 @@ def worker(queue, lock):
 
 
 
-NUM_THREADS = 15  # Adjust this value based on your needs
+NUM_THREADS = 50  # Adjust this value based on your needs
 
 with db_manager.get_connection() as connection:
     cursor = connection.cursor()
+    
     # cursor.execute("""
-    #     SELECT t.id, t.numRatings 
+    #     SELECT t.id, t.numRatings
     #     FROM Teachers t
-    #     WHERE t.numRatings >= 5 
-    #     AND t.numRatings != (SELECT COUNT(*) FROM Reviews r WHERE r.teacherID = t.id)
+    #     LEFT JOIN Reviews r ON t.id = r.teacherID
+    #     WHERE t.numRatings >= 5
+    #     GROUP BY t.id
+
     # """)
+    #  if you want to process only missed rows
+    #  HAVING COUNT(r.teacherID) != t.numRatings
     cursor.execute("""
-        SELECT t.id, t.numRatings
-        FROM Teachers t
-        LEFT JOIN Reviews r ON t.id = r.teacherID
-        WHERE t.numRatings >= 5
-        GROUP BY t.id
-        HAVING COUNT(r.teacherID) != t.numRatings
-    """)
-    # cursor.execute("""
-    #     SELECT t.id, t.numRatings 
-    #     FROM Teachers t
-    #     WHERE t.numRatings >= 5 
-    #     AND t.id NOT IN (SELECT r.teacherID FROM Reviews r)
-    # """)
+            SELECT t.id, t.numRatings
+            FROM Teachers t
+            JOIN Reviews r ON t.id = r.teacherID
+            WHERE t.numRatings >= 5 AND r.qualityRating IS NULL
+            GROUP BY t.id
+            HAVING COUNT(r.qualityRating IS NULL) > 0;
+
+
+        """)
+    
+   
     all_rows = cursor.fetchall()
     total_rows = len(all_rows) 
 
