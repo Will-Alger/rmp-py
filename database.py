@@ -32,11 +32,11 @@ class Database:
         db_url = f"mysql+pymysql://{self.sql_username}:{self.sql_password}@localhost:{self.tunnel.local_bind_port}/{self.sql_main_database}"
         self.engine = create_engine(db_url)
         self.Session = sessionmaker(bind=self.engine)
-        self.session = self.Session()  # Create a session instance
+        self.session = self.Session()
         return self.session
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        self.session.close()  # Close the session
+        self.session.close()
         self.engine.dispose()
         self.tunnel.stop()
 
