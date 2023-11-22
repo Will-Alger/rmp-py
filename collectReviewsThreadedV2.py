@@ -1,30 +1,30 @@
 from RMPScraper import RMPScraper
-from db import SQLiteManager
+from database import Database
+import time
+import threading
+from queue import Queue
+
 scraper = RMPScraper()
+db_manager = Database()
 
-db_manager = SQLiteManager('E:/db.sqlite')
 
-def insert_reviews(data, connection):
-    cursor = connection.cursor()
-    
+def insert_reviews(data, db_session):
     try:
-         teacherID = data['node']['id']
+        teacherID = data['node']['id']
     except Exception as e:
         print(f"error getting teacher id: {str(e)} ")
         return
-    
 
     ratings = data['node']['ratings']
-    
     if ratings is None:
         print(f"No accessible ratings for teacher id: {teacherID}")
         return
 
     edges = ratings['edges']
-       
     for edge in edges:
         try:
-            cursor.execute('''INSERT OR REPLACE INTO Reviews (
+            # Adjusted query for MySQL syntax if necessary
+            db_session.execute('''INSERT INTO reviews (
             id,
             typename,
             attendanceMandatory,
@@ -47,106 +47,80 @@ def insert_reviews(data, connection):
             thumbsUpTotal,
             wouldTakeAgain,
             teacherId,
-            qualityRating) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
-            (
-                edge['node']["id"],
-                edge['node']["__typename"],
-                edge['node']["attendanceMandatory"],
-                edge['node']["clarityRating"],
-                edge['node']["class"],
-                edge['node']["comment"],
-                edge['node']["createdByUser"],
-                edge['node']["date"],
-                edge['node']["difficultyRating"],
-                edge['node']["flagStatus"],
-                edge['node']["grade"],
-                edge['node']["helpfulRating"],
-                edge['node']["isForCredit"],
-                edge['node']["isForOnlineClass"],
-                edge['node']["legacyId"],
-                edge['node']["ratingTags"],
-                edge['node']["teacherNote"],
-                edge['node']["textbookUse"],
-                edge['node']["thumbsDownTotal"],
-                edge['node']["thumbsUpTotal"],
-                edge['node']["wouldTakeAgain"],
-                teacherID,
-                edge['node']['qualityRating'],
-            ))
+            qualityRating
+            ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)''',  # Adjust placeholders
+                               (
+                                   edge['node']["id"],
+                                   edge['node']["__typename"],
+                                   edge['node']["attendanceMandatory"],
+                                   edge['node']["clarityRating"],
+                                   edge['node']["class"],
+                                   edge['node']["comment"],
+                                   edge['node']["createdByUser"],
+                                   edge['node']["date"],
+                                   edge['node']["difficultyRating"],
+                                   edge['node']["flagStatus"],
+                                   edge['node']["grade"],
+                                   edge['node']["helpfulRating"],
+                                   edge['node']["isForCredit"],
+                                   edge['node']["isForOnlineClass"],
+                                   edge['node']["legacyId"],
+                                   edge['node']["ratingTags"],
+                                   edge['node']["teacherNote"],
+                                   edge['node']["textbookUse"],
+                                   edge['node']["thumbsDownTotal"],
+                                   edge['node']["thumbsUpTotal"],
+                                   edge['node']["wouldTakeAgain"],
+                                   teacherID,
+                                   edge['node']['qualityRating'],
+                               ))
         except Exception as e:
             print(f"Error occurred: {e}")
             continue
 
-    connection.commit()
-    
-import time
-import threading
-from queue import Queue
+    db_session.commit()
+
 
 def worker(queue, lock):
-    with db_manager.get_connection() as connection:
+    with db_manager as db:  # Using the context manager for the DB connection
         while True:
             row = queue.get()
-            if row is None: 
+            if row is None:
                 break
-            
-            id = row[0]
-            numRatings = row[1]
 
+            id, numRatings = row
             try:
                 reviews = scraper.get_reviews(id, False, count=numRatings)
             except Exception as e:
                 print(f"Error getting reviews for id {id}: {str(e)}")
                 continue
-            
-            insert_reviews(reviews, connection)
-        
+
+            insert_reviews(reviews, db)
+
             with lock:
                 end_time = time.time()
                 elapsed_time_seconds = end_time - start_time
                 hours, rem = divmod(elapsed_time_seconds, 3600)
                 minutes, seconds = divmod(rem, 60)
                 count = total_rows - queue.qsize()
-                print(f'Processed {count}/{total_rows} rows. Elapsed time: {int(hours)}:{int(minutes)}:{int(seconds)} (HH:MM:SS)')
+                print(
+                    f'Processed {count}/{total_rows} rows. Elapsed time: {int(hours)}:{int(minutes)}:{int(seconds)} (HH:MM:SS)')
+                pass
             queue.task_done()
-
 
 
 NUM_THREADS = 50  # Adjust this value based on your needs
 
-with db_manager.get_connection() as connection:
-    cursor = connection.cursor()
-    
-    # cursor.execute("""
-    #     SELECT t.id, t.numRatings
-    #     FROM Teachers t
-    #     LEFT JOIN Reviews r ON t.id = r.teacherID
-    #     WHERE t.numRatings >= 5
-    #     GROUP BY t.id
-
-    # """)
-    #  if you want to process only missed rows
-    #  HAVING COUNT(r.teacherID) != t.numRatings
-    cursor.execute("""
-            SELECT t.id, t.numRatings
-            FROM Teachers t
-            JOIN Reviews r ON t.id = r.teacherID
-            WHERE t.numRatings >= 5 AND r.qualityRating IS NULL
-            GROUP BY t.id
-            HAVING COUNT(r.qualityRating IS NULL) > 0;
-
-
-        """)
-    
-   
-    all_rows = cursor.fetchall()
-    total_rows = len(all_rows) 
-
+with db_manager as db:
+    all_rows = db.query(
+        '''
+        SELECT t.id, t.numRatings FROM professors t 
+        JOIN reviews r ON t.id = r.teacherID 
+        WHERE t.numRatings >= 5 
+        AND r.qualityRating IS NULL GROUP BY t.id HAVING COUNT(r.qualityRating IS NULL) > 0;
+        ''')
+    total_rows = len(all_rows)
     start_time = time.time()
-
-    # Reverse the order of rows
-    # all_rows = all_rows[::-1]
-    
     queue = Queue()
     lock = threading.Lock()
 
@@ -157,10 +131,8 @@ with db_manager.get_connection() as connection:
         thread = threading.Thread(target=worker, args=(queue, lock))
         thread.start()
 
-    # Wait for all tasks to complete
     queue.join()
 
-    # Signal worker threads to exit
     for _ in range(NUM_THREADS):
         queue.put(None)
 
@@ -170,4 +142,5 @@ elapsed_time_hours = elapsed_time // 3600
 elapsed_time_minutes = (elapsed_time % 3600) // 60
 elapsed_time_seconds = (elapsed_time % 60)
 
-print(f"Elapsed run time: {int(elapsed_time_hours)} hours, {int(elapsed_time_minutes)} minutes, {int(elapsed_time_seconds)} seconds")
+print(
+    f"Elapsed run time: {int(elapsed_time_hours)} hours, {int(elapsed_time_minutes)} minutes, {int(elapsed_time_seconds)} seconds")
