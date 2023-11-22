@@ -1,58 +1,54 @@
 [
-    {
-        "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
-        "node": {
-            "avgRatingRounded": 3.8000000000000003,
-            "city": "Ann Arbor",
-            "departments": [
-  
-            ],
-            "id": "U2Nob29sLTMwMDY=",
-            "legacyId": 3006,
-            "name": "Washtenaw Community College",
-            "numRatings": 268,
-            "state": "MI",
-            "summary": {
-                "campusCondition": 4.1115,
-                "campusLocation": 4.1859,
-                "careerOpportunities": 3.8439,
-                "clubAndEventActivities": 3.2528,
-                "foodQuality": 3.3383,
-                "internetSpeed": 3.4907,
-                "libraryCondition": 4.0335,
-                "schoolReputation": 4.0855,
-                "schoolSafety": 4.1412,
-                "schoolSatisfaction": 4.2862,
-                "socialActivities": 3.2342
-            }
-        }
-    },
-    {
-        "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
-        "node": {
-            "avgRatingRounded": 4.3,
-            "city": "",
-            "departments": [
-               
-            ],
-            "id": "U2Nob29sLTE4ODU1",
-            "legacyId": 18855,
-            "name": "Washtenaw community college",
-            "numRatings": 1,
-            "state": "",
-            "summary": {
-                "campusCondition": 5,
-                "campusLocation": 5,
-                "careerOpportunities": 5,
-                "clubAndEventActivities": 3,
-                "foodQuality": 4,
-                "internetSpeed": 5,
-                "libraryCondition": 5,
-                "schoolReputation": 5,
-                "schoolSafety": 3,
-                "schoolSatisfaction": 5,
-                "socialActivities": 3
-            }
-        }
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+    "node": {
+      "avgRatingRounded": 3.8000000000000003,
+      "city": "Ann Arbor",
+      "departments": [],
+      "id": "U2Nob29sLTMwMDY=",
+      "legacyId": 3006,
+      "name": "Washtenaw Community College",
+      "numRatings": 268,
+      "state": "MI",
+      "summary": {
+        "campusCondition": 4.1115,
+        "campusLocation": 4.1859,
+        "careerOpportunities": 3.8439,
+        "clubAndEventActivities": 3.2528,
+        "foodQuality": 3.3383,
+        "internetSpeed": 3.4907,
+        "libraryCondition": 4.0335,
+        "schoolReputation": 4.0855,
+        "schoolSafety": 4.1412,
+        "schoolSatisfaction": 4.2862,
+        "socialActivities": 3.2342
+      }
     }
+  },
+  {
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+    "node": {
+      "avgRatingRounded": 4.3,
+      "city": "",
+      "departments": [],
+      "id": "U2Nob29sLTE4ODU1",
+      "legacyId": 18855,
+      "name": "Washtenaw community college",
+      "numRatings": 1,
+      "state": "",
+      "summary": {
+        "campusCondition": 5,
+        "campusLocation": 5,
+        "careerOpportunities": 5,
+        "clubAndEventActivities": 3,
+        "foodQuality": 4,
+        "internetSpeed": 5,
+        "libraryCondition": 5,
+        "schoolReputation": 5,
+        "schoolSafety": 3,
+        "schoolSatisfaction": 5,
+        "socialActivities": 3
+      }
+    }
+  }
 ]

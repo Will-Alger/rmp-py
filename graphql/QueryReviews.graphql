@@ -89,6 +89,7 @@ fragment RatingValues_rating on Rating {
   helpfulRating
   clarityRating
   difficultyRating
+  qualityRating
 }
 
 fragment CourseMeta_rating on Rating {

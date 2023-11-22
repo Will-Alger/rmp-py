@@ -1,8 +1,12 @@
 from RMPScraper import RMPScraper
-from db import SQLiteManager
+from database import Database
+from sqlalchemy import text
+from sqlalchemy.dialects.mysql import insert
+from models.professor import Professor
+import time
+
 scraper = RMPScraper()
-
-
+db_manager = Database()
 
 '''
     pseudo logic:
@@ -15,89 +19,81 @@ scraper = RMPScraper()
     
 '''
 
-# Usage
-db_manager = SQLiteManager('E:/rmp-py-db/rmp-py.db')
 
-def insert_teachers(data, connection):
-    cursor = connection.cursor()
+def insert_teachers(data, session):
     for edge in data['edges']:
         try:
-            cursor.execute('''INSERT INTO Teachers (
-            typename,
-            avgDifficulty,
-            avgRating,
-            department,
-            firstName,
-            id,
-            isSaved,
-            lastName,
-            legacyId,
-            numRatings,
-            schoolId,
-            schoolName,
-            wouldTakeAgainPercent) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)''',
-            (
-                edge['node']["__typename"],
-                edge['node']["avgDifficulty"],
-                edge['node']["avgRating"],
-                edge['node']["department"],
-                edge['node']["firstName"],
-                edge['node']["id"],
-                edge['node']["isSaved"],
-                edge['node']["lastName"],
-                edge['node']["legacyId"],
-                edge['node']["numRatings"],
-                edge['node']["school"]["id"],
-                edge['node']["school"]["name"],
-                edge['node']["wouldTakeAgainPercent"]
-            ))
-        except :
-           continue
+            stmt = insert(Professor).values(
+                typename=edge['node']["__typename"],
+                avgDifficulty=edge['node']["avgDifficulty"],
+                avgRating=edge['node']["avgRating"],
+                department=edge['node']["department"],
+                firstName=edge['node']["firstName"],
+                id=edge['node']["id"],
+                lastName=edge['node']["lastName"],
+                legacyId=edge['node']["legacyId"],
+                numRatings=edge['node']["numRatings"],
+                schoolId=edge['node']["school"]["id"],
+                schoolName=edge['node']["school"]["name"],
+                wouldTakeAgainPercent=edge['node']["wouldTakeAgainPercent"]
+            )
 
-    connection.commit()
+            # Execute the statement
+            session.execute(stmt)
+        except Exception as e:
+            continue
+            print(f"Error occurred: {e}")
+    session.commit()
 
-import time
 
-# FIRST QUERY
-current = scraper.get_professors(count=1000)
-with db_manager.get_connection() as connection:
+def insert_teachers_batch(data, session):
+    professors_data = []
+    for edge in data['edges']:
+        professor = {
+            'typename': edge['node']["__typename"],
+            'avgDifficulty': edge['node']["avgDifficulty"],
+            'avgRating': edge['node']["avgRating"],
+            'department': edge['node']["department"],
+            'firstName': edge['node']["firstName"],
+            'id': edge['node']["id"],
+            'lastName': edge['node']["lastName"],
+            'legacyId': edge['node']["legacyId"],
+            'numRatings': edge['node']["numRatings"],
+            'schoolId': edge['node']["school"]["id"],
+            'schoolName': edge['node']["school"]["name"],
+            'wouldTakeAgainPercent': edge['node']["wouldTakeAgainPercent"]
+        }
+        professors_data.append(professor)
 
-    # with open('./schema.sql', 'r') as f:
-    #     schema = f.read()
-    #     cursor = connection.cursor()
-    #     cursor.executescript(schema)
-    start_time = time.time()  # Add a start time right before the loop begins
-    while (current['pageInfo']['hasNextPage'] == True):
-        insert_teachers(current, connection)
+    if professors_data:
+        # session.execute(insert(Professor), professors_data)
+        # session.commit()
+        stmt = insert(Professor).values(professors_data)
+        do_nothing_stmt = stmt.on_duplicate_key_update(
+            id=stmt.inserted.id  # Assuming 'id' is the primary key or a unique field
+        )
+        session.execute(do_nothing_stmt)
+        session.commit()
+
+
+x = 1
+current = scraper.get_professors(count=2000)
+with db_manager as session:
+    session.execute(text("SET FOREIGN_KEY_CHECKS=0"))
+    start_time = time.time()
+    insert_teachers_batch(current, session)
+    x *= 1000
+    print(x)
+
+    while current['pageInfo']['hasNextPage'] == True:
         current = scraper.get_professors(
             count=1000,
-            cursor=current['pageInfo']['endCursor']
-            )
-        
-        time.sleep(1)
+            cursor=current['pageInfo']['endCursor'],
+        )
+        insert_teachers(current, session)
+        x *= 1000
+        print(x)
     end_time = time.time()  # Record the end time after exiting the loop
 
-    # Calculate the elapsed time and print it out in hours
     elapsed_time_hours = (end_time - start_time) / 3600
     print(f"Elapsed run time: {elapsed_time_hours} hours")
-
-
-
-
-
-
-
-
-
-
-
-
-# with open('us-colleges.txt', 'r') as file:
-#     for line in file:
-#         # Split the line at the first '(' and strip unnecessary spaces
-#         school_name = line.split('(')[0].strip()
-#         schoolQuery = scraper.get_school(school_name)
-#         if (len(schoolQuery) >= 10) : 
-#             print(school_name)
-#             break;
-# scraper.get_school('Abilene Christian University', True)
